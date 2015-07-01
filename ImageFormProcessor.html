@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.W3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta name="author" content="Jeanis Sananikone"/>
+		<meta name="description" content="CSP Assignments: Image Form Confirmation" />
+		<meta name="keywords" content="Client Side Programming, JavaScript, CSS" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Language" content="en-us" />
+		<link href="CS2513Assignments.css" rel="stylesheet" />
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<script type="text/javascript" src="CSP.js"></script>
+		<title>CSP Assignments :: Confirmation</title>
+	</head>
+	
+	<body>
+		<!-- Beginning of web page -->
+		<div id="container">
+		
+			<!-- Header and navigation -->
+			<div id="header">
+			<script type="text/javascript">displayHeader();</script>
+				<div id="nav">
+				<script type="text/javascript">displayNav();</script>
+				</div>
+			</div>
+			<!-- End Header -->
+			
+			<!-- Main content -->
+			<div id="content">
+			<script type="text/javascript">
+			/* <![CDATA[ */
+			document.write("<h1 id='confirmationPg'>Your form has been submitted!</h1><h2>You entered the following data:</h2>");
+			var formData = location.search;
+			formData = formData.substring(1, formData.length);
+			while (formData.indexOf("+") != -1) {
+				formData = formData.replace("+", " ");
+			}
+			formData = unescape(formData);
+			var formArray = formData.split("&");
+			var formInfo;
+			
+			//Full Name:
+			formInfo = formArray[0].split("=");
+			var fullName;
+			fullName = formInfo[1];
+			formInfo = formArray[1].split("=");
+			fullName = fullName + " " + formInfo[1];
+			document.writeln("Full name: " + fullName + "<br/>");
+			
+			//Email:
+			var email;
+			formInfo = formArray[2].split("=");
+			email = formInfo[1];
+			document.writeln("Email: " + email  + "<br/>");
+			
+			//Image Size
+			var imageSize;
+			formInfo = formArray[4].split("=");
+			imageSize = formInfo[1];
+			document.writeln("Image Size: " + imageSize  + "<br/>");
+			
+			//Quantity
+			var quantity;
+			formInfo = formArray[5].split("=");
+			quantity = formInfo[1];
+			document.writeln("Quantity: " + quantity  + "<br/>");
+			
+			//Image Selected
+			var imageSelected;
+			formInfo = formArray[3].split("=");
+			imageSelected = formInfo[1];
+			document.writeln("Image Selected:<br/><img src=\"images/" + imageSelected + "\" height=\"274\" width=\"400\" />");
+			
+			var totalCost;
+			switch(imageSize){
+				case "4-Wallets":
+					totalCost = quantity * 10;
+					break;
+				case "2-4x5":
+					totalCost = quantity * 10;
+					break;
+				case "5x7":
+					totalCost = quantity * 10;
+					break
+				case "8x10":
+					totalCost = quantity * 20;
+					break;
+				case "11x14":
+					totalCost = quantity * 30;
+					break;
+			}
+			document.writeln("<br/><h4>Total cost: $" + totalCost + "</h4>");
+			
+			/* ]]> */
+			</script>
+			<div class="clear"></div>
+			</div>
+			<!-- End Content -->
+			
+			<!-- Footer -->
+			<div id="footer">
+			<script type="text/javascript">displayFooter();</script>
+			</div>
+			<!-- End footer -->
+			
+		</div>
+		<!-- End of web page -->
+	</body>
+</html>
+
+
+
