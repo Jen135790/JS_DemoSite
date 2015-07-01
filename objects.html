@@ -37,7 +37,7 @@
 			<span>Waterfall</span>
 			</div>
 			
-			<form id="OrderForm" method="get" action="">
+			<form id="OrderForm" onsubmit="return PurchaseValidation();" method="get" action="">
 				<fieldset id="buyerInfo">
 				<legend>Customer Information</legend>
 				<label for="buyerFName">First Name: </label><input type="text" name="buyerFName" id="buyerFName" /> <label class="error" id="errorFName">* Enter first name</label><br/>
@@ -65,7 +65,7 @@
 				</fieldset>
 				
 				<fieldset id="orderConfirm">
-				<input type="button" value="Process Order" onclick="PurchaseValidation();" />
+				<input type="submit" value="Process Order" />
 				</fieldset>
 			</form>
 
