@@ -187,6 +187,118 @@ function startAdPage()
 //******************************************
 
 //*******Chapter 5: Forms*******
+function FormPurchaseValidation()
+{
+	var error = false;
+	var imageSelected = true;
+	var sizeSelected = false;
+	var orderQuantity = document.getElementById("quantity").value;
+	var buyerEmail = document.getElementById("buyerEmail").value;
+	var buyerFName = document.getElementById("buyerFName").value;
+	var buyerLName = document.getElementById("buyerLName").value;
+	var emailExp = /^[_a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
+	
+	//Checks if image is selected:
+	if(document.forms[0].laosImages[0].checked == false &&
+		document.forms[0].laosImages[1].checked == false &&
+		document.forms[0].laosImages[2].checked == false)
+	{
+		imageSelected = false;
+	}
+	
+	//Checks if photo size is selected:
+	for(var count = 0; count < 5; count++)
+	{
+		if(document.forms[0].photoSizes[count].checked == true)
+		{	
+			sizeSelected = true;
+			break;
+		}
+	}
+	
+	//Checks QUANTITY
+	if(orderQuantity <= 0 || orderQuantity > 25 || isNaN(orderQuantity) == true || orderQuantity == "")
+	{
+		document.getElementById("quantity").focus();
+		document.getElementById("errorQuantity").style.visibility = "visible";
+		error = true;
+	}
+	else
+	{
+		document.getElementById("errorQuantity").style.visibility = "hidden";
+	}
+	
+	//Checks SIZE SELECTION
+	if(sizeSelected == false)
+	{
+		document.forms[0].photoSizes[0].focus();
+		document.getElementById("errorSizeSelect").style.visibility = "visible";
+		error = true;
+	}
+	else
+	{
+		document.getElementById("errorSizeSelect").style.visibility = "hidden";
+	}
+	
+	//Checks IMAGE SELECTION
+	if(imageSelected == false)
+	{
+		document.forms[0].laosImages[0].focus();
+		document.getElementById("errorImageSelect").style.visibility = "visible";
+		error = true;
+	}
+	else
+	{
+		document.getElementById("errorImageSelect").style.visibility = "hidden";
+	}
+	
+	//Checks CUSTOMER INFORMATION
+	if(buyerEmail == "" || emailExp.test(buyerEmail) == false)	//EMAIL
+	{
+		document.getElementById("buyerEmail").focus();
+		document.getElementById("errorEmail").style.visibility = "visible";
+		error = true;
+	}
+	else
+	{
+		document.getElementById("errorEmail").style.visibility = "hidden";
+	}
+	
+	if(buyerLName == "")	//LAST NAME
+	{
+		document.getElementById("buyerLName").focus();
+		document.getElementById("errorLName").style.visibility = "visible";
+		error = true;
+	}
+	else
+	{
+		document.getElementById("errorLName").style.visibility = "hidden";
+	}
+	
+	if(buyerFName == "")	//FIRST NAME
+	{
+		document.getElementById("buyerFName").focus();
+		document.getElementById("errorFName").style.visibility = "visible";
+		error = true;
+	}
+	else
+	{
+		document.getElementById("errorFName").style.visibility = "hidden";
+	}
+	
+	
+	if(error === false && imageSelected === true)
+	{
+		return true;
+	}
+	else{
+		return false;
+	}
+
+}
+//******************************************
+
+//*******Chapter 6: Objects*******
 var portraits = new PortraitOrder();
 
 function PurchaseValidation()
@@ -301,10 +413,6 @@ function PurchaseValidation()
 
 }
 
-//******************************************
-
-//*******Chapter 6: Objects*******
-
 //Returns the date that the files has been last modified:
 function getLastModified()
 {
@@ -384,7 +492,7 @@ function DisplayOutput(){
 	//Content:
 	document.write("<div id='content'>")
 	document.write("<h2>Order Summary</h2>");
-	document.write("<img src='images/" + portraits.Portrait + "' width='400' height='274' />");
+	document.write("<img src='" + portraits.Portrait + "' width='400' height='274' />");
 	document.write("<p>Buyer Name: " + portraits.Buyer);
 	document.write("<br />Email: " + portraits.Email);
 	document.write("<br />Copies: " + portraits.Copies);
