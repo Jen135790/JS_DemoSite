@@ -1,0 +1,135 @@
+/*-------------------------------------------------------
+[CS2513: JavaScript Chapter 7]
+File: buyer.css
+Author: Jeanis Sananikone
+
+[Color Codes]
+	
+	
+	
+[Font Used]
+	Headers
+		- Verdana
+	Body
+		- Arial
+		
+[Table of Contents]
+	I. BODY
+		1. body
+		2. #container
+	II. HEADER
+		1. #header
+		2. h1
+	III. NAVIGATION
+		1. #header a
+		2. #header a:link
+		3. #header a:visited
+		4. #header a:hover
+	IV. FOOTER
+		1. #footer
+	V. REGEX
+		1. .alignRight
+		2. .alignCenter
+		3. .indentLeft
+		4. .hideerror 
+		5. .erroralert 
+	
+-------------------------------------------------------*/
+/*---------- BODY ----------*/
+body
+	{	background-color: #666633;	}
+
+#container
+	{	width: 80%;
+		min-width: 750px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+/*---------- HEADER ----------*/
+#header
+	{	
+		text-align: center;
+		background-color: #CCCC99;
+	}
+	
+h1
+	{	font-family: Verdana;
+		color: #F9F9F9;
+		text-align: center;
+		padding: 10px 15px;
+	}
+
+/*---------- NAVIGATION ----------*/
+
+#nav
+	{
+		width: 100%;
+		border-top: 2px solid #898949;
+		border-bottom: 2px solid #898949;
+		display: inline-block;
+		padding: 5px 0;
+		margin: 0px;
+		background-color: #780022;
+	}
+
+#nav a
+	{	font-family: Arial;
+		display: inline;
+		padding: 5px 20px;
+		padding-bottom: 6px;
+		text-decoration: none;
+		margin: 0px;
+		font-weight: bold;
+	}
+#nav a:link
+	{	color: #898949;
+		background-color: #F2F2CE;
+	}
+	
+#nav a:visited
+	{	background-color: #780022;
+		color: #F9F9F9;
+	}
+	
+#nav a:hover
+	{	background-color: #898949;
+		color: #F2F2CE;
+	}
+	
+/*---------- CONTENT ----------*/
+#content
+	{	background-color: #FFFFFF;
+		padding: 30px;
+		font-family: arial;
+	}
+	
+h2	
+	{	color: #780022;
+		font-family: Arial;
+	}
+
+	
+/*---------- FOOTER ----------*/
+#footer
+	{	text-align: center;
+		background-color: #780022;
+		color: #F9F9F9;
+		font-size: small;
+	}
+	
+/*---------- REGEX ----------*/
+.alignRight		{text-align:right;}
+.alignCenter	{text-align:center;}
+.indentLeft		{margin-left:35%;}
+.hideerror 
+	{
+       color:red;
+       visibility:hidden;
+       font-size:.75em;
+	}
+.erroralert 
+	{
+		color:red;
+		visibility: hidden;
+    }
