@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.W3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta name="author" content="Jeanis Sananikone"/>
+		<meta name="description" content="CSP Assignments: Forms" />
+		<meta name="keywords" content="Client Side Programming, JavaScript, CSS" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Language" content="en-us" />
+		<link href="CS2513Assignments.css" rel="stylesheet" />
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<script type="text/javascript" src="CSP.js"></script>
+		<title>CSP Assignments :: Forms</title>
+	</head>
+	
+	<body>
+		<!-- Beginning of web page -->
+		<div id="container">
+		
+			<!-- Header and navigation -->
+			<div id="header">
+			<script type="text/javascript">displayHeader();</script>
+				<div id="nav">
+				<script type="text/javascript">displayNav();</script>
+				</div>
+			</div>
+			<!-- End Header -->
+			
+			<!-- Main content -->
+			<div id="content">
+			<h2 id="LaosGallery">Laos Photo Gallery: Ordering Form</h2>
+			<div id="forms_Images">
+			<img src="images/forms_Laos1.jpg" alt="Laos Buddha Park" width="400" height="274" />
+			<span>Buddha Park</span>
+			<img src="images/forms_Laos2.jpg" alt="Laos Vang Vieng" width="400" height="274" />
+			<span>Vang Vieng</span>
+			<img src="images/forms_Laos3.jpg" alt="Laos Waterfall" width="400" height="274" />
+			<span>Waterfall</span>
+			</div>
+			
+			<form onsubmit="return PurchaseValidation();" id="OrderForm" method="get" action="FormProcessor.html">
+				<fieldset id="buyerInfo">
+				<legend>Customer Information</legend>
+				<label for="buyerFName">First Name: </label><input type="text" name="buyerFName" id="buyerFName" /> <label class="error" id="errorFName">* Enter first name</label><br/>
+				<label for="buyerLName">Last Name: </label><input type="text" name="buyerLName" id="buyerLName" /> <label class="error" id="errorLName">* Enter last name</label><br/>
+				<label for="buyerEmail">Email: </label><input type="text" name="buyerEmail" id="buyerEmail" /> <label class="error" id="errorEmail">* Enter email address</label><br/>
+				</fieldset>
+				
+				<fieldset id="imageSelection">
+				<legend>Select Image</legend>
+				<input type="radio" name="laosImages" id="laosImages1" value="forms_Laos1.jpg" /><label for="laosImages1">Buddha Park</label>
+				<input type="radio" name="laosImages" id="laosImages2" value="forms_Laos2.jpg" /><label for="laosImages2">Vang Vieng</label>
+				<input type="radio" name="laosImages" id="laosImages3" value="forms_Laos3.jpg" /><label for="laosImages3">Waterfall</label>
+				<label class="error" id="errorImageSelect">* Select an image</label>
+				</fieldset>
+				
+				<fieldset id="imageSize">
+				<legend>Order Information</legend>
+				<input type="radio" name="photoSizes" id="wallets" value="4-Wallets" /><label class="sizeLabels" for="wallets">4 - Wallets ($10)</label>
+				<input type="radio" name="photoSizes" id="size4x6" value="2-4x6" /><label class="sizeLabels" for="size4x6">2 - 4x5 ($10)</label>
+				<input type="radio" name="photoSizes" id="size5x7" value="5x7" /><label class="sizeLabels" for="size5x7">5x7 ($10)</label>
+				<input type="radio" name="photoSizes" id="size8x10" value="8x10" /><label class="sizeLabels" for="size8x10">8x10 ($20)</label>
+				<input type="radio" name="photoSizes" id="size11x14" value="11x14" /><label class="sizeLabels" for="size11x14">11x14 ($30)</label>
+				<label class="error" id="errorSizeSelect">* Select a size</label><br/>
+				<label id="quantityLabel" for="quantity">Quantity: </label><input type="text" name="quantity" id="quantity" /> <label class="error" id="errorQuantity">* Enter a quantity (1-25)</label><br/>
+				</fieldset>
+				
+				<fieldset id="orderConfirm">
+				<input type="submit" value="Process Order" />
+				</fieldset>
+			</form>
+
+			<div class="clear"></div>
+			</div>
+			<!-- End Content -->
+			
+			<!-- Footer -->
+			<div id="footer">
+			<script type="text/javascript">displayFooter();</script>
+			</div>
+			<!-- End footer -->
+			
+		</div>
+		<!-- End of web page -->
+	</body>
+</html>
