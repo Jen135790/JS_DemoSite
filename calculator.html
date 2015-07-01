@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.W3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta name="author" content="Jeanis Sananikone"/>
+		<meta name="description" content="CSP Assignments: Calculator" />
+		<meta name="keywords" content="Client Side Programming, JavaScript, CSS" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Language" content="en-us" />
+		<link href="CS2513Assignments.css" rel="stylesheet" />
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<script type="text/javascript" src="CSP.js"></script>
+		<title>CSP Assignments :: Calculator</title>
+	</head>
+	
+	<body>
+		<!-- Beginning of web page -->
+		<div id="container">
+		
+			<!-- Header and navigation -->
+			<div id="header">
+			<script type="text/javascript">displayHeader();</script>
+				<div id="nav">
+				<script type="text/javascript">displayNav();</script>
+				</div>
+			</div>
+			<!-- End Header -->
+			
+			<!-- Main content -->
+			<div id="content">
+			
+			<h2>Calculator Program</h2>
+			
+			<form id="calculator" action="">
+			<fieldset>
+				<input type="text" name="inputString"/><br/>
+				<button type="button" name="button1" value="1" onclick="updateString('1');">1</button>
+				<button type="button" name="button2" value="2" onclick="updateString('2');" >2</button>
+				<button type="button" name="button3" value="3" onclick="updateString('3');" >3</button>
+				<button type="button" name="plus" value="+" onclick="updateString('+');" >+</button><br/>
+				
+				<button type="button" name="button4" value="4" onclick="updateString('4');" >4</button>
+				<button type="button" name="button5" value="5" onclick="updateString('5');" >5</button>
+				<button type="button" name="button6" value="6" onclick="updateString('6');" >6</button>
+				<button type="button" name="minus" value="-" onclick="updateString('-');" >-</button><br/>
+				
+				<button type="button" name="button7" value="7" onclick="updateString('7');" >7</button>
+				<button type="button" name="button8" value="8" onclick="updateString('8');" >8</button>
+				<button type="button" name="button9" value="9" onclick="updateString('9');" >9</button>
+				<button type="button" name="multiply" value="*" onclick="updateString('*');" >*</button><br/>
+				
+				<button type="button" name="Clear" value="C" onclick="updateString('c');" >C</button>
+				<button type="button" name="button0" value="0" onclick="updateString('0');" >0</button>
+				<button type="button" name="buttonEquals" value="=" onclick="updateString('=');" >=</button>
+				<button type="button" name="buttonDivide" value="/" onclick="updateString('/');" >/</button><br/>
+				</fieldset>
+			</form>
+				
+			<div class="clear"></div>
+			</div>
+			<!-- End Content -->
+			
+			<!-- Footer -->
+			<div id="footer">
+			<script type="text/javascript">displayFooter();</script>
+			</div>
+			<!-- End footer -->
+			
+		</div>
+		<!-- End of web page -->
+	</body>
+</html>
