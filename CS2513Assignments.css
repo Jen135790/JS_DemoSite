@@ -1,0 +1,372 @@
+/*-------------------------------------------------------
+[CS2513: JavaScript]
+File: CS2513Assignments.css
+Author: Jeanis Sananikone
+
+[Color Codes]
+	#FFFFFF - White
+	#000000 - Black
+	#666633 - Dark olive
+	#CCCC99 - Yellow olive
+	#F9F9F9 - Cream
+	#898949 - Olive
+	#F2F2CE - White yellow
+	#780022 - Scarlet red
+	#0645AD - Link blue
+	
+	
+[Font Used]
+	Headers
+		- Verdana
+	Body
+		-
+		
+[Table of Contents]
+	I. BODY
+		1. body
+		2. #container
+	II. HEADER
+		1. #header
+		2. h1
+	III. NAVIGATION
+		1. #header a
+		2. #header a:link
+		3. #header a:visited
+		4. #header a:hover
+	IV. CONTENT
+		1. #content
+		2. h2	
+		3. #HomePgPic	
+		4. Assignment 2: Calculator
+			a. #calculator	
+			b. #calculator button
+			c. #calculator input
+		5. Assignment 3: Prime Numbers
+			a. #primeHeading
+			b. #primeNumbers
+			c. #primeNumbers fieldset
+			d. #primeNumbers label
+			e. #firstNum, #endNum
+			f. #primeTable
+			g. #primeTable td
+			h. #adInfo p
+			i. #countdownText
+			j. #countText
+		6. Assignment 5: Forms
+			a. #LaosGallery
+			b. #forms_Images
+			c. #forms_Images span
+			d. #OrderForm fieldset
+			e. #buyerInfo label
+			f. #confirmationPg
+			g. .error
+			h. #imageSelection label
+			i. .sizeLabels
+			j. #quantityLabel
+			k. #orderConfirm
+		7. Assignment 9: Shop
+			a. #shopHeading
+			b. #cartHeading
+			c. #shoppingTable
+			d. #shoppingTable td
+			e. #shoppingCart
+			f. #shoppingCart td
+			g. #priceTable
+			h. #priceTable label
+			i. #priceTable input
+			j. #shopperStatus
+			k. #pictureRef
+		8. Assignment 10: Promo
+			a. #adPromo
+			b. #promoPic
+			c. #closePromo
+		9. Assignment 11: AJAX
+			a. #curDate
+			b. #datePara
+		10. .clear
+	V. FOOTER
+		1. #footer
+	
+-------------------------------------------------------*/
+/*---------- BODY ----------*/
+body
+	{	background-color: #666633;	}
+
+#container
+	{	
+		width: 80%;
+		min-width: 750px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+/*---------- HEADER ----------*/
+#header
+	{	
+		text-align: center;
+		background-color: #CCCC99;
+	}
+	
+h1
+	{	font-family: Verdana;
+		color: #F9F9F9;
+		text-align: center;
+		padding: 10px 15px;
+	}
+
+/*---------- NAVIGATION ----------*/
+
+#nav
+	{
+		width: 100%;
+		border-top: 2px solid #898949;
+		border-bottom: 2px solid #898949;
+		display: inline-block;
+		padding: 5px 0;
+		margin: 0px;
+		background-color: #780022;
+	}
+
+#nav a
+	{	font-family: Arial;
+		display: inline;
+		padding: 5px 20px;
+		padding-bottom: 6px;
+		text-decoration: none;
+		margin: 0px;
+		font-weight: bold;
+	}
+#nav a:link
+	{	color: #898949;
+		background-color: #F2F2CE;
+	}
+	
+#nav a:visited
+	{	background-color: #780022;
+		color: #F9F9F9;
+	}
+	
+#nav a:hover
+	{	background-color: #898949;
+		color: #F2F2CE;
+	}
+	
+/*---------- CONTENT ----------*/
+#content
+	{	background-color: #FFFFFF;
+		padding: 30px;
+		font-family: arial;
+	}
+	
+h2	
+	{	color: #780022;
+		font-family: Arial;
+	}
+#HomePgPic	
+	{	float: left;
+		border: 2px inset #780022;
+		margin: 10px 30px;
+	}
+
+/***Assignment 2: Calculator***/
+#calculator	
+	{	display: inline;
+		text-align: center;
+	}
+#calculator fieldset
+	{	
+	text-align: center;
+		width: 175px;
+	}
+#calculator button
+	{	margin: 3px;
+		padding: 5px;
+	}
+#calculator input
+	{	margin: 2px 4px;	}
+
+/***Assignment 3: Prime Numbers***/
+#primeHeading
+	{	text-align: center;	}
+#primeNumbers
+	{	display: inline;
+		text-align: center;
+	}
+#primeNumbers fieldset
+	{	border-style: none;	}
+#primeNumbers label
+	{	display: inline-block;
+		width: 120px;
+		padding-right: 10px;
+		text-align: right;
+	}
+#firstNum, #endNum
+	{	margin: 5px 0px;	}
+#primeTable
+	{	
+		border-collapse: collapse;
+		text-align: center;
+		font-family: Arial;
+	}
+#primeTable td
+	{	border: 3px solid #780022;
+		border-collapse: collapse;
+		padding: 10px;
+		background-color: #CCCC99;
+	}
+
+#AdInfo p
+	{	display: inline;	}
+	
+#countdownText
+	{	border-style: none;
+		overflow: hidden;
+	}
+#countText
+	{	border: 1px solid #000;
+		width: 20px;
+	}
+
+
+/***Assignment 5: Forms***/
+#LaosGallery
+	{	text-align: center;	}
+#forms_Images
+	{	text-align: center;
+		
+	}
+#forms_Images span
+	{	display: block;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	
+#OrderForm fieldset
+	{	margin-bottom: 20px;
+		text-align: center;
+	}
+	
+#buyerInfo label
+	{	display: inline-block;
+		margin: 5px;
+		text-align: right;
+		width: 200px;
+	}
+
+#confirmationPg
+	{	color: #780022;
+		font-family: Arial;
+		text-align: left;
+	}
+	
+.error
+	{	margin-left: 5px;
+		color: red;
+		text-align: right;
+		font-weight: bold;
+		visibility: hidden;
+	}
+	
+#imageSelection label
+	{	margin-right: 35px;	}
+	
+.sizeLabels
+	{	margin-right: 25px;
+	}
+	
+#quantityLabel
+	{	display: inline-block;
+		margin-top: 10px;
+		text-align: right;
+		width: 200px;
+	}
+	
+#orderConfirm
+	{	border: none;	}
+
+
+/***Assignment 9: Shop***/
+#shopHeading
+	{	text-align: center;	margin-bottom: 10px;	}
+#cartHeading
+	{	text-align: center;	margin-top: 30px; margin-bottom: 10px;	}
+
+#shoppingTable
+	{	border: 1px solid #000;
+		margin-left: auto;
+		margin-right: auto;
+	}
+#shoppingTable td
+	{	border: 1px solid #000;
+		padding: 3px;
+	}
+	
+#shoppingCart
+	{	border: 1px solid #000;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 30px;
+	}
+#shoppingCart td
+	{	border: 1px solid #000;
+		padding: 3px;
+	}
+	
+#priceTable
+	{	border: 1px solid #000;
+		padding: 5px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+#priceTable label
+	{	float: right;	}
+#priceTable input
+	{	width: 70px;	}
+	
+#shopperStatus
+	{	text-align: center;
+		font-size: small;
+		font-weight: bold;
+	}
+#pictureRef
+	{	font-weight: bold;
+		font-size: x-small;
+		text-align: center;
+		margin-bottom: 0px;
+	}
+	
+	
+/***Assignment 10: Promo***/
+#adPromo
+	{	position: absolute;
+		border: 1px solid #000000;
+		text-align: center;
+		background-color: #CCCC99;
+		display: none;
+	}
+#promoPic
+	{	
+		width: 400px;
+		height: 300px;
+	}
+#closePromo
+	{	float: right;
+		color: #0645AD;
+		text-decoration: underline;
+		margin-right: 5px;
+	}
+
+	
+/***Assignment 11: AJAX***/	
+#curDate	{ text-align: center; }
+#datePara	{ text-align: center; }
+
+.clear	{	clear: both;	}
+
+/*---------- FOOTER ----------*/
+#footer
+	{	text-align: center;
+		background-color: #780022;
+		color: #F9F9F9;
+		font-size: small;
+	}
