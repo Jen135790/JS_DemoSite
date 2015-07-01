@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.W3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta name="author" content="Jeanis Sananikone"/>
+		<meta name="description" content="CSP Assignments: Form Confirmation" />
+		<meta name="keywords" content="Client Side Programming, JavaScript, CSS" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Language" content="en-us" />
+		<link href="CS2513Assignments.css" rel="stylesheet" />
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<script type="text/javascript" src="CSP.js"></script>
+		<title>CSP Assignments :: Confirmation</title>
+	</head>
+	
+	<body>
+		<!-- Beginning of web page -->
+		<div id="container">
+		
+			<!-- Header and navigation -->
+			<div id="header">
+			<script type="text/javascript">displayHeader();</script>
+				<div id="nav">
+				<script type="text/javascript">displayNav();</script>
+				</div>
+			</div>
+			<!-- End Header -->
+			
+			<!-- Main content -->
+			<div id="content">
+			<script type="text/javascript">
+			/* <![CDATA[ */
+			document.write("<h1 id='confirmationPg'>Your form has been submitted!</h1><h2>You entered the following data:</h2>");
+			var formData = location.search;
+			formData = formData.substring(1, formData.length);
+			while (formData.indexOf("+") != -1) {
+				formData = formData.replace("+", " ");
+			}
+			formData = unescape(formData);
+			var formArray = formData.split("&");
+			var formInfo;
+			
+			//Full Name:
+			formInfo = formArray[0].split("=");
+			var fullName;
+			fullName = formInfo[1];
+			formInfo = formArray[1].split("=");
+			fullName = fullName + " " + formInfo[1];
+			document.writeln("Full name: " + fullName + "<br/>");
+			
+			//Phone:
+			var phoneNum;
+			formInfo = formArray[2].split("=");
+			phoneNum = "(" + formInfo[1];
+			formInfo = formArray[3].split("=");
+			phoneNum = phoneNum + ") " + formInfo[1];
+			formInfo = formArray[4].split("=");
+			phoneNum = phoneNum + "-" + formInfo[1];
+			document.writeln("Phone number: " + phoneNum  + "<br/>");
+			
+			//Cell
+			var cellNum;
+			formInfo = formArray[5].split("=");
+			if(formInfo[1] != ""){
+				cellNum = "(" + formInfo[1] + ") ";
+				formInfo = formArray[6].split("=");
+				cellNum = cellNum + formInfo[1] + "-";
+				formInfo = formArray[7].split("=");
+				cellNum = cellNum + formInfo[1];
+				document.writeln("Cell number: " + cellNum);
+			}
+			else{
+				document.writeln("Cell number: N/A<br/>");
+			}
+			
+			//Email
+			var email;
+			formInfo = formArray[8].split("=");
+			email = formInfo[1];
+			document.writeln("Email: " + email  + "<br/>");
+			
+			//Address 1
+			var address1;
+			formInfo = formArray[10].split("=");
+			address1 = formInfo[1];
+			document.writeln("Address 1: " + address1  + "<br/>");
+			
+			
+			//Address 2
+			var address2;
+			formInfo = formArray[11].split("=");
+			if(formInfo[1] != ""){
+			address2 = formInfo[1];
+			document.writeln("Address 2: " + address2  + "<br/>");
+			}
+			else{
+				document.writeln("Address 2: N/A<br/>");
+			}
+			
+			var city;
+			formInfo = formArray[12].split("=");
+			city = formInfo[1];
+			document.writeln("City: " + city  + "<br/>");
+			
+			var state;
+			formInfo = formArray[13].split("=");
+			state = formInfo[1];
+			document.writeln("State: " + state  + "<br/>");
+			
+			/* ]]> */
+			</script>
+			<div class="clear"></div>
+			</div>
+			<!-- End Content -->
+			
+			<!-- Footer -->
+			<div id="footer">
+			<script type="text/javascript">displayFooter();</script>
+			</div>
+			<!-- End footer -->
+			
+		</div>
+		<!-- End of web page -->
+	</body>
+</html>
+
+
+
